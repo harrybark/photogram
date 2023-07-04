@@ -1,0 +1,51 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: utf-8
+      enabled: true
+    
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+      
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/photogram?serverTimezone=Asia/Seoul
+    username: harry
+    password: harry1234
+    
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+      #ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+      
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+
+  security:
+    user:
+      name: test
+      password: 1234
+
+    oauth2:
+      client:
+        registration:
+          facebook:
+            client-id: 1880428082336105
+            client-secret: 997c466936a9d171dbceb9a0f4642b11
+            scope:
+              - public_profile
+              - email
+
+file:
+  path: /Users/harry/Desktop/workspace/upload/
